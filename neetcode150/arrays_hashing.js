@@ -1,6 +1,6 @@
 // EASY
 
-// Contains Duplicate
+// CONTAINS DUPLICATE
 //// Sets store collections of unique values
 
 var containsDuplicate = (nums) => {
@@ -34,4 +34,19 @@ var containsDuplicate = function (nums) {
   }
 
   return false;
+};
+
+// VALID ANAGRAM
+
+const reorder = (str) =>
+  str
+    .split("")
+    .sort((a, b) => a.localeCompare(b))
+    .join("");
+
+var isAnagram = function (s, t) {
+  // first check if strings even have same number of letters before reordering
+  if (s.length !== t.length) return false;
+
+  return reorder(s) === reorder(t);
 };
