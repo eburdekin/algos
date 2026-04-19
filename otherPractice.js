@@ -1,0 +1,182 @@
+// ARRAY BASICS
+
+// FIND MIN
+
+/// loop
+function findMin(arr) {
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+
+function findMinBuiltIn(arr) {
+  return Math.min(...arr);
+}
+
+// FIND MAX
+
+/// loop
+function findMax(arr) {
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++)
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  return max;
+}
+
+// built-in
+function findMaxBuiltIn(arr) {
+  return Math.max(...arr);
+}
+
+// SUM OF ARRAY
+
+/// brute-force loop
+function findSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+/// use reduce
+function findSumWithReduce(arr) {
+  return arr.reduce(function (acc, curr) {
+    return acc + curr;
+  }, 0);
+}
+
+// AVERAGE OF ARRAY
+
+/// brute-force loop
+function findAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+}
+
+/// use reduce
+function findAverageWithReduce(arr) {
+  const sum = arr.reduce(function (acc, curr) {
+    return acc + curr;
+  }, 0);
+  return sum / arr.length;
+}
+
+/// use reduce + arrow function, one-line = implicit return
+const findAverageWithReduceArrowFunc = (arr) => {
+  const sum = arr.reduce((acc, curr) => acc + curr, 0);
+  return sum / arr.length;
+};
+
+// FLATTEN AN ARRAY
+
+// MERGE 2 ARRAYS
+
+// REMOVE FALSEY VALUES
+function removeFalsey(arr) {
+  return arr.filter((val) => val);
+}
+
+//
+
+// TWO-POINTERS
+
+// REVERSE A STRING
+function reverseString(str) {
+  let rev = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    rev += str[i];
+  }
+  return rev;
+}
+
+// using built-in methods
+function reverseString2(str) {
+  return str.split("").reverse().join("");
+}
+
+// REMOVE DUPLICATES
+
+/// use array.filter
+
+// CHECK IF ARRAY IS SORTED
+
+//
+
+// HASH MAP/OBJECT LOOKUP
+
+// COUNT CHARS IN STRING
+
+// FIRST NON-REPEATING CHAR
+
+// MOST FREQUENT ELEMENT
+
+//
+
+// STRING MANIPULATION
+
+// COUNT VOWELS
+function countVowels(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  const count = {};
+
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count[char] = (count[char] || 0) + 1;
+    }
+  }
+
+  return count;
+}
+
+// CAPITALIZE WORDS
+
+//
+
+// BASIC SORTING/COMPARISON
+
+// SORT NUMBERS
+
+// SORT OBJECTS BY PROPERTY
+
+//
+
+// MAP PRACTICE
+
+// DOUBLE EACH NUMBER
+function doubleEachNumber(arr) {
+  return arr.map((item) => item * 2);
+}
+
+// CONVERT TO STRINGS
+function convertToStrings(arr) {
+  return arr.map((item) => `${item}`);
+}
+
+// EXTRACT PROPERTY
+function extractProperty(arrOfObj, key) {
+  return arrOfObj.map((obj) => obj[key]);
+}
+
+//
+
+// FILTER PRACTICE
+
+// GET EVEN NUMBERS
+function getEven(arr) {
+  return arr.filter((num) => num % 2 === 0);
+}
+
+// FILTER OBJS BY PROPERTY (ex: active users only - active=true)
+function filterByProperty(arr, key) {
+  return arr.filter((obj) => obj[key]);
+}
