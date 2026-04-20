@@ -115,10 +115,51 @@ function reverseString2(str) {
 // HASH MAP/OBJECT LOOKUP
 
 // COUNT CHARS IN STRING
+function countChars(str) {
+  const count = {};
+
+  for (let char of str) {
+    count[char] = (count[char] || 0) + 1;
+  }
+  return count;
+}
 
 // FIRST NON-REPEATING CHAR
+function firstNonRepeating(str) {
+  const count = {};
+
+  // pass 1: count frequency
+  for (let char of str) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  // pass 2: find first non-repeating
+  for (let char of str) {
+    if (count[char] === 1) {
+      return char;
+    }
+  }
+
+  return null;
+}
 
 // MOST FREQUENT ELEMENT
+function mostFrequentElement(arr) {
+  const count = {};
+  let maxCount = 0;
+  let result = null;
+
+  for (let el of arr) {
+    count[el] = (count[el] || 0) + 1;
+
+    if (count[el] > maxCount) {
+      maxCount = count[el];
+      result = el;
+    }
+  }
+
+  return result;
+}
 
 //
 
