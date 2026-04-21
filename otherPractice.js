@@ -80,6 +80,13 @@ const findAverageWithReduceArrowFunc = (arr) => {
 // FLATTEN AN ARRAY
 
 // MERGE 2 ARRAYS
+function mergeArrays(arr1, arr2) {
+  return [...arr1, ...arr2];
+}
+
+function mergeArraysConcat(arr1, arr2) {
+  return arr1.concat(arr2);
+}
 
 // REMOVE FALSEY VALUES
 function removeFalsey(arr) {
@@ -105,10 +112,11 @@ function reverseString2(str) {
 }
 
 // REMOVE DUPLICATES
+function removeDuplicates(arr) {}
 
-/// use array.filter
-
-// CHECK IF ARRAY IS SORTED
+function removeDupesWithSet(arr) {
+  return [...new Set(arr)];
+}
 
 //
 
@@ -180,14 +188,26 @@ function countVowels(str) {
 }
 
 // CAPITALIZE WORDS
+function capitalizeWords(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (i === 0 || str[i - 1] === " ") {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i];
+    }
+  }
+  return result;
+}
 
 //
 
 // BASIC SORTING/COMPARISON
 
 // SORT NUMBERS
-
-// SORT OBJECTS BY PROPERTY
+function sortNumbers(arr) {
+  return arr.sort((a, b) => a - b);
+}
 
 //
 
@@ -220,4 +240,23 @@ function getEven(arr) {
 // FILTER OBJS BY PROPERTY (ex: active users only - active=true)
 function filterByProperty(arr, key) {
   return arr.filter((obj) => obj[key]);
+}
+
+//
+
+// REDUCE PRACTICE
+
+// Object from array of arrays
+function objFromArrOfArrs(arr) {
+  const obj = {};
+  for (const [key, value] of arr) {
+    obj[key] = value;
+  }
+}
+
+function objFromArrOfArrs2(arr) {
+  arr.reduce((acc, [key, value]) => {
+    acc[key] = value;
+    return acc;
+  }, {});
 }
